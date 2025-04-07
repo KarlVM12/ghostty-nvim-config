@@ -24,6 +24,18 @@ return {
       cmp_lsp.default_capabilities()
     )
 
+    local on_attach = function(client, bufnr)
+      local opts = { buffer = bufnr, noremap = true, silent = true }
+
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP Hover", buffer = bufnr })
+      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to Definition", buffer = bufnr })
+      vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, { desc = "Go to Implementation", buffer = bufnr })
+      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "Find References", buffer = bufnr })
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename Symbol", buffer = bufnr })
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", buffer = bufnr })
+    end
+
+
     require("fidget").setup({})
     require("mason").setup()
 
@@ -37,6 +49,7 @@ return {
         function(server_name)
           require('lspconfig')[server_name].setup({
             capabilities = capabilities,
+            on_attach = on_attach,
           })
         end,
         lua_ls = function()
@@ -90,3 +103,4 @@ return {
     })
   end
 }
+

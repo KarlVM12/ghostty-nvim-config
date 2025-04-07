@@ -72,5 +72,11 @@ return {
   config = function()
     -- Keybindings for buffer navigation
     vim.api.nvim_set_keymap('n', '<M-Tab>', ':bn', { noremap = true, silent = true })
+    vim.keymap.set("n", "<leader>tc", function()
+      local name = vim.fn.expand("%:t")
+      vim.cmd("bdelete")
+      vim.notify(name .. " closed", vim.log.levels.INFO, { title = "Buffer" })
+    end, { desc = "Close Current Buffer", noremap = true })
+
   end
 }
