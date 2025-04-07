@@ -1,9 +1,10 @@
 # ghostty-nvim-config
 
-install ghostty, nvim, and ripgrep (faster file searching):
+install ghostty, nvim, lazygit, and ripgrep (faster file searching):
 - [ ] `brew install --cask ghostty`
 - [ ] `brew install neovim`
 - [ ] `brew install ripgrep`
+- [ ] `brew install lazygit`
 
 Heavily inspired by [marshmalon](https://vineeth.io/posts/neovim-setup) and The Primeagen.<br/>
 Place the nvim and ghostty config structure and files into your root `.config/`<br/>
