@@ -5,25 +5,29 @@
 # https://github.com/search?q=path%3Aghostty%2Fconfig&type=code
 
 # ghostty +list-fonts
-font-family = BerkeleyMono Nerd Font
-font-family-italic = "Maple Mono"
-font-family-bold-italic = "Maple Mono"
+# used to all just be Maple Mono
+font-family = Maple Mono
+font-family-italic = Maple Mono
+font-family-bold = Maple Mono
+font-family-bold-italic = Maple Mono
 #font-family = Symbols Nerd Font Mono
 
 font-size = 14
-window-title-font-family = "Maple Mono"
+window-title-font-family = Maple Mono
 
 macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = true
 
-background-opacity = 0.96
+background-opacity = 0.80
 background-blur-radius = 40
 
 cursor-style = block
+# cursor-style-blink = true
 
 # ghostty +list-themes
-theme = catppuccin-mocha
+# 0x96f, miasma, tokyonight_night, catppuccin-mocha
+theme = tokyonight_night
 
 # keymaps
 keybind = global:cmd+`=toggle_quick_terminal
